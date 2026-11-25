@@ -21,10 +21,11 @@ a:focus-visible { outline: 3px solid currentColor; outline-offset: 5px; }
 .site-menu nav a:hover { color: var(--mint); text-decoration: underline; }
 main, section { scroll-margin-top: 7rem; }
 .hero { position: relative; isolation: isolate; min-height: clamp(31rem, 58vw, 49rem); padding: clamp(2rem, 6.2vw, 6.25rem); overflow: hidden; background: #112a41; color: #f7fbff; }
-.hero-image { object-fit: cover; object-position: center; }
-.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(105deg, #061827db 0%, #071b2b9e 36%, #071b2b24 70%, transparent 100%); }
+.hero-image { object-fit: cover; object-position: center 64%; }
+.hero::after { content: ""; position: absolute; inset: 0; background: linear-gradient(to top, #06131ba8, transparent 23%), linear-gradient(105deg, #0719296b, #07192944 42%, transparent 72%); }
 .hero-copy { position: relative; z-index: 1; }
-.hero h1 { font-size: clamp(2.65rem, 6vw, 5.65rem); line-height: 1; font-weight: 700; letter-spacing: -.05em; margin: 0 0 1.35rem; overflow-wrap: anywhere; }
+.hero-logo { position: absolute; z-index: 1; inset-inline-end: clamp(.5rem, 2vw, 1.5rem); inset-block-end: .65rem; width: clamp(10rem, 25vw, 22rem); height: auto; mix-blend-mode: screen; pointer-events: none; }
+.hero h1 { font-size: clamp(2.65rem, 6vw, 5.65rem); line-height: 1.03; font-weight: 650; letter-spacing: -.05em; margin: 0 0 1.35rem; overflow-wrap: anywhere; }
 .hero h1 span { display: block; color: #b9e1f7; }
 .hero-copy > p { max-width: 42ch; color: #ecf5fc; font-size: clamp(1.0625rem, 1.65vw, 1.32rem); margin: 0; }
 .quick-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: .75rem; max-width: 60rem; padding-block: clamp(1.25rem, 3.5vw, 2.75rem); }
@@ -50,17 +51,19 @@ dl div { border-top: 1px solid #9fbab8; padding: .85rem 0 .95rem; }
 dl div:last-child { border-bottom: 1px solid #9fbab8; }
 dt { font-size: 1.17rem; font-weight: 750; }
 dd { margin: .15rem 0 0; }
-.contact-form { max-width: 33rem; margin-top: 1.5rem; padding: clamp(1rem, 2.5vw, 1.5rem); border: 1px solid #9fbab8; background: #fff; }
-.contact-form h3 { margin: 0 0 .35rem; }
-.contact-form p { font-size: .9375rem; }
+.contact-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1rem, 2.5vw, 2rem); margin-top: clamp(1.25rem, 3vw, 2rem); }
+.contact-panel { min-width: 0; padding: clamp(1rem, 2.5vw, 1.75rem); border: 1px solid #9fbab8; border-radius: .4rem; background: #fff; }
+.contact-panel h3 { margin: 0 0 .35rem; }
+.contact-panel p { margin: 0 0 1rem; font-size: .9375rem; }
+.contact-details a { overflow-wrap: anywhere; }
+.contact-details dl div:last-child { border-bottom: 0; padding-bottom: 0; }
 .contact-form fieldset { display: grid; gap: .85rem; min-width: 0; margin: 0; padding: 0; border: 0; }
 .contact-form label { display: grid; gap: .2rem; font-weight: 650; }
 .contact-form input, .contact-form textarea { width: 100%; padding: .45rem .65rem; color: var(--ink); background: #fff; border: 1px solid #779592; border-radius: .25rem; font: inherit; font-weight: 400; }
 .contact-form textarea { resize: vertical; }
 .contact-form :is(input, textarea, button):focus-visible { outline: 3px solid var(--teal); outline-offset: 2px; }
 .contact-form button { justify-self: start; border: 0; font: inherit; font-weight: 750; cursor: pointer; }
-.contact-form :is(input, textarea, button):disabled { color: #3f5a5b; background: #e8f2f0; cursor: default; }
-.contact-form button:disabled { text-decoration: none; }
+.contact-form button:disabled { color: #3f5a5b; background: #e8f2f0; cursor: default; text-decoration: none; }
 .site-footer { background: #000; color: #f0fbf9; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem 2rem; padding-block: 1.3rem; font-size: .9375rem; }
 .footer-inner nav { display: flex; flex-wrap: wrap; gap: .35rem 1.25rem; }
@@ -73,9 +76,9 @@ dd { margin: .15rem 0 0; }
 }
 @media (max-width: 48rem) {
   .wrap { width: calc(100% - 2rem); }
-  .hero-image { object-position: 68% center; }
-  .hero::after { background: linear-gradient(180deg, #061827e8 0%, #071b2baa 44%, #071b2b10 100%); }
-  .split { grid-template-columns: 1fr; }
+  .hero-image { object-position: right 64%; }
+  .hero::after { background: linear-gradient(to top, #06131ba8, transparent 23%), linear-gradient(180deg, #061827d9, #071b2b99 46%, transparent 94%); }
+  .split, .contact-grid { grid-template-columns: minmax(0, 1fr); }
 }
 @media (max-width: 38rem) {
   .wordmark { width: 11rem; }

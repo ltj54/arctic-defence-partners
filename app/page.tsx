@@ -1,6 +1,6 @@
 import Image from "next/image";
 import logo from "./arctic-defence-partners-logo.png";
-import coast from "./nordnorsk-kyst.webp";
+import harbor from "./finnmark-havn.webp";
 import SiteMenu from "./site-menu";
 
 const sectionIds = {
@@ -17,8 +17,6 @@ const links = [
   { href: `#${sectionIds.network}`, label: "Nettverket" },
   { href: `#${sectionIds.activities}`, label: "Aktiviteter" },
   { href: `#${sectionIds.members}`, label: "Medlemmer" },
-  { href: `#${sectionIds.board}`, label: "Styret" },
-  { href: `#${sectionIds.partners}`, label: "Samarbeid" },
   { href: `#${sectionIds.contact}`, label: "Kontakt" },
 ];
 
@@ -61,11 +59,12 @@ export default function Home() {
     </header>
     <main id={sectionIds.main} tabIndex={-1}>
       <section className="wrap hero" aria-labelledby="main-title">
-        <Image className="hero-image" src={coast} alt="" fill loading="eager" fetchPriority="high" />
+        <Image className="hero-image" src={harbor} alt="" fill loading="eager" fetchPriority="high" />
         <div className="hero-copy">
           <h1 id="main-title">Forsvarsleveranser <span>fra nord</span></h1>
           <p>Nord-Norge står midt i det største forsvars- og beredskapsløftet i moderne tid. Arctic Defence Partners samler nordnorske leverandører for å bidra til flere forsvarsleveranser fra nord.</p>
         </div>
+        <Image className="hero-logo" src={logo} alt="" loading="eager" />
       </section>
       <nav className="wrap quick-links" aria-label="Snarveier">
         <a className="action" href="mailto:hilde@sjurelv.no">Bli medlem</a>
@@ -131,13 +130,14 @@ export default function Home() {
         </div>
       </section>
       <section id={sectionIds.contact} className="topics" tabIndex={-1}>
-        <div className="wrap body-section split">
-          <div>
-            <h2>Kontakt oss</h2>
+        <div className="wrap body-section">
+          <h2>Kontakt oss</h2>
+          <div className="contact-grid">
             <form
-              className="contact-form"
+              className="contact-panel contact-form"
               action={contactFormEnabled ? "https://formsubmit.co/kg@arcticenergy.net" : undefined}
               method="post"
+              autoComplete="on"
               aria-labelledby="contact-form-title"
               aria-describedby="contact-form-note"
             >
@@ -145,9 +145,9 @@ export default function Home() {
               <p id="contact-form-note">
                 {contactFormEnabled
                   ? "Meldingen sendes via FormSubmit. Unngå å oppgi sensitive opplysninger."
-                  : "Forhåndsvisning. Bruk kontaktinformasjonen på siden for å sende en henvendelse."}
+                  : "Du kan prøve feltene her. Bruk kontaktinformasjonen på siden for å sende en henvendelse."}
               </p>
-              <fieldset disabled={!contactFormEnabled} aria-labelledby="contact-form-title">
+              <fieldset aria-labelledby="contact-form-title">
                 {contactFormEnabled && <input type="hidden" name="_subject" value="Henvendelse til Arctic Defence Partners" />}
                 <label>
                   <span>Navn</span>
@@ -161,30 +161,31 @@ export default function Home() {
                   <span>Melding</span>
                   <textarea name="message" rows={5} maxLength={4000} required />
                 </label>
-                <button className="action" type="submit">Send melding</button>
+                <button className="action" type="submit" disabled={!contactFormEnabled}>Send melding</button>
               </fieldset>
             </form>
-          </div>
-          <div>
-            <p>Vil dere bli medlem? Send en e-post til <a href="mailto:hilde@sjurelv.no">Hilde Sjurelv</a>.</p>
-            <dl>
-              <div>
-                <dt>Kjell Giæver</dt>
-                <dd><a href="tel:+4795154900">+47 951 54 900</a><br /><a href="mailto:kg@arcticenergy.net">kg@arcticenergy.net</a></dd>
-              </div>
-              <div>
-                <dt>Hilde Sjurelv</dt>
-                <dd><a href="tel:+4791321000">+47 913 21 000</a><br /><a href="mailto:hilde@sjurelv.no">hilde@sjurelv.no</a></dd>
-              </div>
-              <div>
-                <dt>Besøk oss</dt>
-                <dd>Sjøgata 9, 5. etasje<br />9600 Hammerfest<br />Inngang via Nissensenteret eller Storgata.</dd>
-              </div>
-              <div>
-                <dt>Postadresse</dt>
-                <dd>Postboks 301 Sentrum<br />9615 Hammerfest</dd>
-              </div>
-            </dl>
+            <div className="contact-panel contact-details">
+              <h3>Kontaktinformasjon</h3>
+              <p>Vil dere bli medlem? Send en e-post til <a href="mailto:hilde@sjurelv.no">Hilde Sjurelv</a>.</p>
+              <dl>
+                <div>
+                  <dt>Kjell Giæver</dt>
+                  <dd><a href="tel:+4795154900">+47 951 54 900</a><br /><a href="mailto:kg@arcticenergy.net">kg@arcticenergy.net</a></dd>
+                </div>
+                <div>
+                  <dt>Hilde Sjurelv</dt>
+                  <dd><a href="tel:+4791321000">+47 913 21 000</a><br /><a href="mailto:hilde@sjurelv.no">hilde@sjurelv.no</a></dd>
+                </div>
+                <div>
+                  <dt>Besøk oss</dt>
+                  <dd>Sjøgata 9, 5. etasje<br />9600 Hammerfest<br />Inngang via Nissensenteret eller Storgata.</dd>
+                </div>
+                <div>
+                  <dt>Postadresse</dt>
+                  <dd>Postboks 301 Sentrum<br />9615 Hammerfest</dd>
+                </div>
+              </dl>
+            </div>
           </div>
         </div>
       </section>
