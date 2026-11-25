@@ -3,6 +3,20 @@ import logo from "./arctic-defence-partners-logo.png";
 import harbor from "./finnmark-havn.webp";
 import SiteMenu from "./site-menu";
 
+const visitMapImage = `https://wms.geonorge.no/skwms1/wms.topo?${new URLSearchParams({
+  service: "WMS",
+  request: "GetMap",
+  version: "1.3.0",
+  crs: "EPSG:3857",
+  bbox: "2635393,11287873,2636993,11288513",
+  layers: "topo",
+  styles: "",
+  width: "800",
+  height: "320",
+  format: "image/png",
+})}`;
+const visitMapLink = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent("Sjøgata 9, 9600 Hammerfest")}`;
+
 const sectionIds = {
   main: "innhold",
   network: "nettverket",
@@ -178,7 +192,17 @@ export default function Home() {
                 </div>
                 <div>
                   <dt>Besøk oss</dt>
-                  <dd>Sjøgata 9, 5. etasje<br />9600 Hammerfest<br />Inngang via Nissensenteret eller Storgata.</dd>
+                  <dd>
+                    Sjøgata 9, 5. etasje<br />9600 Hammerfest<br />Inngang via Nissensenteret eller Storgata.
+                    <a className="visit-map" href={visitMapLink} aria-label="Åpne Sjøgata 9, 9600 Hammerfest i Google Maps">
+                      <span className="visit-map-preview">
+                        <Image src={visitMapImage} width={800} height={320} alt="" referrerPolicy="no-referrer" />
+                        <span className="visit-map-pin" aria-hidden="true" />
+                      </span>
+                      <span className="visit-map-label">Åpne i Google Maps</span>
+                    </a>
+                    <a className="visit-map-credit" href="https://www.kartverket.no/">© Kartverket</a>
+                  </dd>
                 </div>
                 <div>
                   <dt>Postadresse</dt>

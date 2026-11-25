@@ -57,6 +57,13 @@ dd { margin: .15rem 0 0; }
 .contact-panel p { margin: 0 0 1rem; font-size: .9375rem; }
 .contact-details a { overflow-wrap: anywhere; }
 .contact-details dl div:last-child { border-bottom: 0; padding-bottom: 0; }
+.visit-map { display: block; margin-top: .75rem; border: 1px solid #9fbab8; border-radius: .35rem; overflow: hidden; text-decoration: none; }
+.visit-map-preview { position: relative; display: block; aspect-ratio: 5 / 2; background: var(--pale); }
+.visit-map-preview img { display: block; width: 100%; height: auto; }
+.visit-map-pin { position: absolute; left: 50%; top: 50%; width: 1.4rem; height: 1.4rem; border: 2px solid #fff; border-radius: 50% 50% 50% 0; background: var(--teal); box-shadow: 0 1px 4px #102a3566; transform-origin: bottom left; transform: translateY(-100%) rotate(-45deg); }
+.visit-map-label { display: block; padding: .4rem .7rem; font-size: .9375rem; font-weight: 650; }
+.visit-map:hover .visit-map-label { background: var(--pale); text-decoration: underline; }
+.visit-map-credit { display: inline-block; margin-top: .2rem; font-size: .75rem; }
 .contact-form fieldset { display: grid; gap: .85rem; min-width: 0; margin: 0; padding: 0; border: 0; }
 .contact-form label { display: grid; gap: .2rem; font-weight: 650; }
 .contact-form input, .contact-form textarea { width: 100%; padding: .45rem .65rem; color: var(--ink); background: #fff; border: 1px solid #779592; border-radius: .25rem; font: inherit; font-weight: 400; }
