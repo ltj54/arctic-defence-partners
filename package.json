@@ -1,0 +1,20 @@
+{
+  "name": "arctic-defence-partners",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev --webpack -H 127.0.0.1",
+    "build": "next build --webpack",
+    "lint": "eslint app next.config.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": { "next": "16.4.6", "react": "^19.0.0", "react-dom": "^19.0.0" },
+  "devDependencies": {
+    "@types/node": "^25.6.0",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "eslint": "^9.39.4",
+    "eslint-config-next": "16.4.6",
+    "typescript": "^6.0.2"
+  }
+}

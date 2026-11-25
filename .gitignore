@@ -1,0 +1,14 @@
+node_modules/
+.next/
+out/
+.idea/
+*.iml
+.env*
+!.env.example
+*.tsbuildinfo
+next-env.d.ts
+*.log
+*.tmp
+/.internt/
+/KRAVSPESIFIKASJON.md
+/AVTALEUTKAST_NETTSIDE_OG_DRIFT.md
