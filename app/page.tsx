@@ -215,7 +215,10 @@ export default function Home() {
       </section>
     </main>
     <footer className="site-footer"><div className="wrap footer-inner">
-      <a className="wordmark" href={`#${sectionIds.main}`}><Image src={logo} alt="Arctic Defence Partners" /></a>
+      <div>
+        <a className="wordmark" href={`#${sectionIds.main}`}><Image src={logo} alt="Arctic Defence Partners" /></a>
+        <p className="footer-org">Org.nr. 938 783 942</p>
+      </div>
       <nav aria-label="Bunnmeny">
         <a href="mailto:hilde@sjurelv.no">Bli medlem</a>
         <a href={`#${sectionIds.partners}`}>Samarbeid</a>

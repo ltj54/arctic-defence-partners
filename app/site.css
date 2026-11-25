@@ -73,6 +73,7 @@ dd { margin: .15rem 0 0; }
 .contact-form button:disabled { color: #3f5a5b; background: #e8f2f0; cursor: default; text-decoration: none; }
 .site-footer { background: #000; color: #f0fbf9; }
 .footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem 2rem; padding-block: 1.3rem; font-size: .9375rem; }
+.footer-org { margin: 0; }
 .footer-inner nav { display: flex; flex-wrap: wrap; gap: .35rem 1.25rem; }
 .footer-inner nav a { color: var(--mint); }
 @media (max-width: 58rem) {
