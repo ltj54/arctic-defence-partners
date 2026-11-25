@@ -4,7 +4,7 @@ import "./site.css";
 
 export const metadata: Metadata = {
   title: "Arctic Defence Partners | Forhåndsvisning",
-  description: "Arctic Defence Partners er et nordnorsk nettverk for samarbeid, innovasjon og beredskap. Første skisse til ny nettside.",
+  description: "Arctic Defence Partners samler nordnorske leverandører for å bidra til flere forsvarsleveranser fra nord.",
   robots: { index: false, follow: false },
 };
 
